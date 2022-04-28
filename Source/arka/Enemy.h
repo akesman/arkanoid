@@ -16,10 +16,9 @@ class ARKA_API AEnemy : public AActor
 public:
 	// Sets default values for this actor's properties
 	AEnemy();
-
-
-	int lvlEnemy;
-	int pointsByLvl;
+	
+	int LvlEnemy;
+	int PointsByLvl;
 
 	 const FLinearColor WhiteBLOCK = FLinearColor(1, 1, 1, 1);
 	 const FLinearColor BlueBLOCK = FLinearColor(0, 0, 1, 1);
@@ -32,7 +31,7 @@ protected:
 public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	void initLevel(int lvl);
+	void InitLevel(int Lvl);
 
 	UPROPERTY(EditAnyWhere)
 	UBoxComponent* Root;
@@ -42,7 +41,7 @@ public:
 	UStaticMeshComponent* MeshComponent;
 
 
-	UMaterialInstanceDynamic* material;
+	UMaterialInstanceDynamic* Material;
 
 	UFUNCTION()
 	virtual void NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved,
@@ -53,12 +52,12 @@ public:
 	UFUNCTION()
 	void OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp,
 	                       int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
-	void addScore(int multi);
+	void AddScore(int Multi);
 
 	UFUNCTION()
 	void OnOverlapEnd(class UPrimitiveComponent* OverlappedComp, class AActor* OtherActor,
 	                  class UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
-	void destroyItem();
-	void changeColor();
-	void spawnBonus(FVector location);
+	void DestroyItem();
+	void ChangeColor();
+	void SpawnBonus(FVector Location);
 };

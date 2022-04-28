@@ -19,7 +19,7 @@ public:
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
-	void reloadLife();
+	void ReloadLife();
 
 public:	
 	// Called every frame
@@ -28,11 +28,11 @@ public:
 	UPROPERTY(EditAnyWhere)
 	UTextRenderComponent* Root;
 
-	void AddLife(int addPoint);
+	void AddLife(int AddPoint);
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="component")
 	UStaticMeshComponent* MeshComponent;
 
-	int life;
+	int Life;
 
 };

@@ -14,24 +14,21 @@ class ARKA_API AScore : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
 	AScore();
-
 	
-
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	
 private:
 	int Score;
+	
 public:	
-	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	UPROPERTY(EditAnyWhere)
 	UTextRenderComponent* Root;
 
-	void AddScore(int addPoint);
+	void AddScore(int AddPoint);
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="component")
 	UStaticMeshComponent* MeshComponent;

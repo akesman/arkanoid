@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "BonusType.h"
+#include "Enums.h"
 #include "GameFramework/Actor.h"
 #include "Bonus.generated.h"
 
@@ -30,13 +30,13 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	void changeColor(int type);
+	void changeColor(int Type);
 
-	UMaterialInstanceDynamic* material;
+	UMaterialInstanceDynamic* Material;
 
 	UFUNCTION()
 	void OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp,
 	                       int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
-	BonusType type;
+	E_BonusType Type;
 };

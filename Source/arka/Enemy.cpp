@@ -6,6 +6,7 @@
 #include "arkaGameModeBase.h"
 #include "Ball.h"
 #include "Bonus.h"
+#include "Carriage.h"
 #include "Chaos/AABBTree.h"
 #include "Components/BoxComponent.h"
 #include "Kismet/GameplayStatics.h"
@@ -13,54 +14,49 @@
 
 AEnemy::AEnemy()
 {
-	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 	Root = CreateDefaultSubobject<UBoxComponent>("Component");
 	Root->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
-
-
+	Root->SetBoxExtent(FVector(55, 55, 45));
 	RootComponent = Root;
-	MeshComponent = CreateDefaultSubobject<UStaticMeshComponent>("StaticMesh");
 
+	MeshComponent = CreateDefaultSubobject<UStaticMeshComponent>("StaticMesh");
 	ConstructorHelpers::FObjectFinder<UStaticMesh> MeshForHeadMesh(TEXT("/Game/StarterContent/Shapes/Shape_Cube"));
 	if (MeshForHeadMesh.Succeeded())
 	{
 		MeshComponent->SetStaticMesh(MeshForHeadMesh.Object);
 
 		auto PhysicalMaterialAsset = ConstructorHelpers::FObjectFinder<UObject>(TEXT(
-			"PhysicalMaterial'/Game/LowMaterial'"));
+			"PhysicalMaterial'/Game/M_LowMaterial'"));
 
 		if (PhysicalMaterialAsset.Succeeded())
 		{
-			material = UMaterialInstanceDynamic::Create((UMaterial*)PhysicalMaterialAsset.Object, NULL);
-			MeshComponent->SetMaterial(0, material);
+			Material = UMaterialInstanceDynamic::Create((UMaterial*)PhysicalMaterialAsset.Object, NULL);
+			MeshComponent->SetMaterial(0, Material);
 		}
 	}
 
-	Root->SetBoxExtent(FVector(55, 55, 45));
 	MeshComponent->SetupAttachment(RootComponent);
 }
 
-// Called when the game starts or when spawned
 void AEnemy::BeginPlay()
 {
 	Root->OnComponentBeginOverlap.AddDynamic(this, &AEnemy::OnBoxBeginOverlap);
 	Root->OnComponentEndOverlap.AddDynamic(this, &AEnemy::OnOverlapEnd);
-	pointsByLvl = 5;
+	PointsByLvl = 5;
 	Super::BeginPlay();
 }
 
-// Called every frame
 void AEnemy::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 }
 
-void AEnemy::initLevel(int lvl)
+void AEnemy::InitLevel(int Lvl)
 {
-	lvlEnemy = lvl;
-	changeColor();
+	LvlEnemy = Lvl;
+	ChangeColor();
 }
 
 void AEnemy::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp,
@@ -77,10 +73,10 @@ void AEnemy::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* Othe
 	{
 		if (Other && (Other != this) && OtherComp && Other->GetClass() == ABall::StaticClass())
 		{
-			if (((ABall*)Other)->GetDestrouBonus())
+			if (((ACarriage*)UGameplayStatics::GetPlayerPawn(GetWorld(), 0))->bActiveBonusDestroy)
 			{
-				destroyItem();
-				addScore(pointsByLvl * lvlEnemy);
+				DestroyItem();
+				AddScore(PointsByLvl * LvlEnemy);
 			}
 		}
 	}
@@ -90,67 +86,64 @@ void AEnemy::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* Othe
 void AEnemy::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp,
                           int32 OtherBodyIndex)
 {
-	if ((Other != NULL) && (Other != this) && (OtherComp != NULL))
+	if (Other && Other->GetClass() == ABall::StaticClass())
 	{
-		if (Other && (Other != this) && OtherComp && Other->GetClass() == ABall::StaticClass())
+		LvlEnemy --;
+		ChangeColor();
+		AddScore(1);
+		if (LvlEnemy <= 0)
 		{
-			lvlEnemy --;
-			changeColor();
-			addScore(1);
-			if (lvlEnemy <= 0)
+			if (FMath::RandRange(0, 100) > 70)
 			{
-				if (FMath::RandRange(0, 100) > 70)
-				{
-					spawnBonus(FVector(GetActorLocation().X, GetActorLocation().Y, GetActorLocation().Z));
-				}
-
-				destroyItem();
+				SpawnBonus(FVector(GetActorLocation().X, GetActorLocation().Y, GetActorLocation().Z));
 			}
+
+			DestroyItem();
 		}
 	}
 }
 
-void AEnemy::destroyItem()
+void AEnemy::DestroyItem()
 {
 	GetWorld()->DestroyActor(this);
 	TArray<AActor*> FoundActors;
 	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AEnemy::StaticClass(), FoundActors);
 	if (FoundActors.Num() == 0)
 	{
-		GetWorld()->GetAuthGameMode<AarkaGameModeBase>()->nextLevel();
+		GetWorld()->GetAuthGameMode<AarkaGameModeBase>()->NextLevel();
 	}
 }
 
-void AEnemy::changeColor()
+void AEnemy::ChangeColor()
 {
-	switch (lvlEnemy)
+	switch (LvlEnemy)
 	{
 	case 1:
 		{
-			material->SetVectorParameterValue("color", WhiteBLOCK);
+			Material->SetVectorParameterValue("color", WhiteBLOCK);
 		}
 		break;
 	case 2:
 		{
-			material->SetVectorParameterValue("color", BlueBLOCK);
+			Material->SetVectorParameterValue("color", BlueBLOCK);
 		}
 		break;
 	case 3:
 		{
-			material->SetVectorParameterValue("color", RedBLOCK);
+			Material->SetVectorParameterValue("color", RedBLOCK);
 		}
 		break;
 	}
 }
 
-void AEnemy::addScore(int multi)
+void AEnemy::AddScore(int Multi)
 {
-	GetWorld()->GetAuthGameMode<AarkaGameModeBase>()->Score->AddScore(pointsByLvl * multi);
+	GetWorld()->GetAuthGameMode<AarkaGameModeBase>()->Score->AddScore(PointsByLvl * Multi);
 }
 
-void AEnemy::spawnBonus(FVector location)
+void AEnemy::SpawnBonus(FVector Location)
 {
-	FTransform SpawnTransform = FTransform(FRotator(), location, FVector(0.1, 1, 1));
+	FTransform SpawnTransform = FTransform(FRotator(), Location, FVector(0.1, 1, 1));
 	SpawnTransform.SetRotation(FQuat(0, 0, 0, 0));
 	GetWorld()->SpawnActor<ABonus>(
 		ABonus::StaticClass(), SpawnTransform, FActorSpawnParameters());

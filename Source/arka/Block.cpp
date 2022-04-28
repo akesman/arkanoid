@@ -1,10 +1,6 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "Block.h"
-
 #include "Components/BoxComponent.h"
-#include "GameFramework/PhysicsVolume.h"
 #include "PhysicalMaterials/PhysicalMaterial.h"
 
 // Sets default values
@@ -21,23 +17,20 @@ ABlock::ABlock()
 	{
 		MeshComponent->SetStaticMesh(MeshForHeadMesh.Object);
 		auto PhysicalMaterialAsset = ConstructorHelpers::FObjectFinder<UObject>(TEXT(
-			"PhysicalMaterial'/Game/LowFric'"));
+			"PhysicalMaterial'/Game/PM_LowFric'"));
 
 		MeshComponent->SetPhysMaterialOverride((UPhysicalMaterial*)PhysicalMaterialAsset.Object);
 	}
 
 	MeshComponent->SetupAttachment(RootComponent);
-
 	Root->SetCollisionProfileName("BlockALl");
 }
 
-// Called when the game starts or when spawned
 void ABlock::BeginPlay()
 {
 	Super::BeginPlay();
 }
 
-// Called every frame
 void ABlock::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);

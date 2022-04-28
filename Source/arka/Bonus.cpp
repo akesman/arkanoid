@@ -6,6 +6,7 @@
 #include "Ball.h"
 #include "Carriage.h"
 #include "Enemy.h"
+#include "Enums.h"
 #include "Components/BoxComponent.h"
 #include "Kismet/GameplayStatics.h"
 
@@ -27,11 +28,11 @@ ABonus::ABonus()
 		MeshComponent->SetStaticMesh(MeshForHeadMesh.Object);
 
 		auto PhysicalMaterialAsset = ConstructorHelpers::FObjectFinder<UObject>(TEXT(
-			"PhysicalMaterial'/Game/LowMaterial'"));
+			"PhysicalMaterial'/Game/M_LowMaterial'"));
 		MeshComponent->SetMaterial(0, (UMaterial*)PhysicalMaterialAsset.Object);
 
-		material = UMaterialInstanceDynamic::Create((UMaterial*)PhysicalMaterialAsset.Object, NULL);
-		MeshComponent->SetMaterial(0, material);
+		Material = UMaterialInstanceDynamic::Create((UMaterial*)PhysicalMaterialAsset.Object, NULL);
+		MeshComponent->SetMaterial(0, Material);
 	}
 
 
@@ -47,7 +48,7 @@ ABonus::ABonus()
 	Root->BodyInstance.bLockYRotation = true;
 	Root->BodyInstance.bLockZRotation = true;
 	Root->BodyInstance.bLockXTranslation = true;
-	
+
 	MeshComponent->SetupAttachment(RootComponent);
 }
 
@@ -56,10 +57,10 @@ void ABonus::BeginPlay()
 {
 	int rnd = FMath::RandRange(0, 2);
 
-	if (rnd == 0) type = DestroyBall;
-	if (rnd == 1) type = AddPoint;
-	if (rnd == 2) type = AddWidth;
-	
+	if (rnd == 0) Type = E_BonusType::DestroyBall;
+	if (rnd == 1) Type = E_BonusType::AddPoint;
+	if (rnd == 2) Type = E_BonusType::AddWidth;
+
 	changeColor(rnd);
 
 	Root->OnComponentBeginOverlap.AddDynamic(this, &ABonus::OnBoxBeginOverlap);
@@ -75,7 +76,7 @@ void ABonus::Tick(float DeltaTime)
 	{
 		GetWorld()->DestroyActor(this);
 	}
-	
+
 	Root->AddLocalOffset(FVector(0, 0, -2));
 }
 
@@ -85,17 +86,17 @@ void ABonus::changeColor(int type2)
 	{
 	case 0:
 		{
-			material->SetVectorParameterValue("color", FLinearColor(1, 1, 1, 1));
+			Material->SetVectorParameterValue("color", FLinearColor(1, 1, 1, 1));
 		}
 		break;
 	case 1:
 		{
-			material->SetVectorParameterValue("color", FLinearColor(0, 0, 1, 1));
+			Material->SetVectorParameterValue("color", FLinearColor(0, 0, 1, 1));
 		}
 		break;
 	case 2:
 		{
-			material->SetVectorParameterValue("color", FLinearColor(1, 0, 0, 1));
+			Material->SetVectorParameterValue("color", FLinearColor(1, 0, 0, 1));
 		}
 		break;
 	}
@@ -104,20 +105,17 @@ void ABonus::changeColor(int type2)
 void ABonus::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp,
                                int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	if ((Other != NULL) && (Other != this) && (OtherComp != NULL))
+	if (Other && Other->GetClass() == ACarriage::StaticClass())
 	{
-		if (Other && (Other != this) && OtherComp && Other->GetClass() == ACarriage::StaticClass())
+		UE_LOG(LogTemp, Warning, TEXT("Bonus use!"));
+
+		TArray<AActor*> FoundActors;
+		UGameplayStatics::GetAllActorsOfClass(GetWorld(), ABall::StaticClass(), FoundActors);
+		if (FoundActors.Num() != 0)
 		{
-			UE_LOG(LogTemp, Warning, TEXT("Bonus use!"));
-
-			TArray<AActor*> FoundActors;
-			UGameplayStatics::GetAllActorsOfClass(GetWorld(), ABall::StaticClass(), FoundActors);
-			if (FoundActors.Num() != 0)
-			{
-				((ABall*)FoundActors[0])->ActiveBonus(type);
-			}
-
-			GetWorld()->DestroyActor(this);
+			((ACarriage*)UGameplayStatics::GetPlayerPawn(GetWorld(), 0))->ActiveBonus(Type);
 		}
+
+		GetWorld()->DestroyActor(this);
 	}
 }

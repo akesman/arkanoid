@@ -1,17 +1,12 @@
 // Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "Ball.h"
-
 #include "arkaGameModeBase.h"
-#include "BonusType.h"
+#include "Enums.h"
 #include "Components/BoxComponent.h"
 #include "Kismet/GameplayStatics.h"
 
-// Sets default values
 ABall::ABall()
 {
-	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
 	Root = CreateDefaultSubobject<UBoxComponent>("Component");
@@ -24,9 +19,8 @@ ABall::ABall()
 		MeshComponent->SetStaticMesh(MeshForHeadMesh.Object);
 	}
 
-
 	auto PhysicalMaterialAsset = ConstructorHelpers::FObjectFinder<UObject>(TEXT(
-		"PhysicalMaterial'/Game/LowMaterial'"));
+		"PhysicalMaterial'/Game/M_LowMaterial'"));
 	if (PhysicalMaterialAsset.Succeeded())
 	{
 		MeshComponent->SetMaterial(0, (UMaterial*)PhysicalMaterialAsset.Object);
@@ -48,24 +42,17 @@ ABall::ABall()
 	MeshComponent->SetupAttachment(RootComponent);
 }
 
-
 void ABall::BeginPlay()
 {
-	activeBonusDestroy = false;
-	activeBonusWidth = false;
-	timeDestroy = 0;
-	timeWidth = 0;
 	Super::BeginPlay();
 }
 
-
-// Called every frame
 void ABall::Tick(float DeltaTime)
 {
-	if (abs(GetVelocity().Z) < 200 && GetWorld()->GetAuthGameMode<AarkaGameModeBase>()->gameState == Playing)
+	if (abs(GetVelocity().Z) < 200 && GetWorld()->GetAuthGameMode<AarkaGameModeBase>()->GameState == E_Status::Playing)
 	{
-		int a = GetVelocity().Z < 0 ? -400 : 400;
-		Root->SetAllPhysicsLinearVelocity(FVector(GetVelocity().X, GetVelocity().Y, a));
+		int InZ = GetVelocity().Z < 0 ? -400 : 400;
+		Root->SetAllPhysicsLinearVelocity(FVector(GetVelocity().X, GetVelocity().Y, InZ));
 	}
 
 	if (GetActorLocation().Z < 0)
@@ -74,80 +61,39 @@ void ABall::Tick(float DeltaTime)
 		GetWorld()->GetAuthGameMode<AarkaGameModeBase>()->EndLife();
 	}
 
-
-	if (activeBonusDestroy && timeDestroy < 7)
-	{
-		timeDestroy = timeDestroy + DeltaTime;
-	}
-	else if (activeBonusDestroy)
-	{
-		timeDestroy = 0;
-		activeBonusDestroy = false;
-		UE_LOG(LogTemp, Warning, TEXT("activeBonus destroy disable!"));
-	}
-
-
-	if (activeBonusWidth && timeWidth < 7)
-	{
-		timeWidth = timeWidth + DeltaTime;
-	}
-	else if (activeBonusWidth)
-	{
-		timeWidth = 0;
-		activeBonusWidth = false;
-		UE_LOG(LogTemp, Warning, TEXT("activeBonus width disable!"));
-		APawn* PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
-		PlayerPawn->SetActorScale3D(FVector(1, 5, 1));
-	}
+	Respawn();
 
 	Super::Tick(DeltaTime);
 }
 
-
-void ABall::SetBall(FVector vector)
+void ABall::Respawn()
 {
-	SetActorLocation(FVector(0, vector.Y, 500));
-}
-
-void ABall::ActiveBonus(BonusType type)
-{
-	if (type == AddPoint)
+	FVector Location = GetActorLocation();
+	if (Location.Y > 1900 || Location.Y < -1900 || Location.Z > 2100)
 	{
-		GetWorld()->GetAuthGameMode<AarkaGameModeBase>()->Score->AddScore(100);
-	}
-
-	if (type == DestroyBall)
-	{
-		typeBonus = type;
-		activeBonusDestroy = true;
-	}
-
-	if (type == AddWidth)
-	{
-		APawn* PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
-		PlayerPawn->SetActorScale3D(FVector(1, 5 + 2, 1));
-		typeBonus = type;
-		activeBonusWidth = true;
+		SetActorLocation(FVector(0, 0, 500));
+		Root->SetAllPhysicsLinearVelocity(FVector(0, 0, 800));
+		UE_LOG(LogTemp, Warning, TEXT("RESPAWN "));
 	}
 }
 
-bool ABall::GetDestrouBonus()
+void ABall::SetBall(FVector Vector)
 {
-	return activeBonusDestroy;
+	SetActorLocation(FVector(0, Vector.Y, 500));
 }
 
 void ABall::AddSpeed()
 {
-	FVector velosity = Root->GetComponentVelocity();
+	FVector Velosity = Root->GetComponentVelocity();
 
-	if (abs(velosity.Y) < 200)
+	if (abs(Velosity.Y) < 200)
 	{
-		int a = velosity.Y < 0 ? -1 : 1;
-		Root->SetAllPhysicsLinearVelocity(FVector(0, a * 400, (velosity.Z / velosity.Z) * 2000));
+		int Y = Velosity.Y < 0 ? -1 : 1;
+		Root->SetAllPhysicsLinearVelocity(FVector(0, Y * 400, (Velosity.Z / Velosity.Z) * 2000));
 	}
 	else
 	{
-		Root->SetAllPhysicsLinearVelocity(FVector(0, velosity.Y, 2000));
+		Root->SetAllPhysicsLinearVelocity(FVector(0, Velosity.Y, 2000));
 	}
 }
 
