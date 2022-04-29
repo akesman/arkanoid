@@ -86,20 +86,17 @@ void AEnemy::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* Othe
 void AEnemy::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp,
                           int32 OtherBodyIndex)
 {
-	if (Other && Other->GetClass() == ABall::StaticClass())
+	LvlEnemy --;
+	ChangeColor();
+	AddScore(1);
+	if (LvlEnemy <= 0)
 	{
-		LvlEnemy --;
-		ChangeColor();
-		AddScore(1);
-		if (LvlEnemy <= 0)
+		if (FMath::RandRange(0, 100) > 70)
 		{
-			if (FMath::RandRange(0, 100) > 70)
-			{
-				SpawnBonus(FVector(GetActorLocation().X, GetActorLocation().Y, GetActorLocation().Z));
-			}
-
-			DestroyItem();
+			SpawnBonus(FVector(GetActorLocation().X, GetActorLocation().Y, GetActorLocation().Z));
 		}
+
+		DestroyItem();
 	}
 }
 

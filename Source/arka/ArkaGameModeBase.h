@@ -21,12 +21,19 @@ private:
 	const int HeightWall = 2000;
 	const float HeightBlock = 20;
 	const float WidthBlock = 1;
-	
+
 public:
 	E_Status GameState;
+	
+	UPROPERTY()
 	ALife* Life;
+	
+	UPROPERTY()
 	AScore* Score;
+	
+	UPROPERTY()
 	ABall* Ball;
+	
 	GENERATED_BODY()
 
 	AarkaGameModeBase();

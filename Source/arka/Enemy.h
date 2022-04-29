@@ -41,6 +41,7 @@ public:
 	UStaticMeshComponent* MeshComponent;
 
 
+	UPROPERTY(BlueprintReadWrite)
 	UMaterialInstanceDynamic* Material;
 
 	UFUNCTION()

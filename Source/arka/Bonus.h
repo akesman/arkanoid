@@ -14,7 +14,6 @@ class ARKA_API ABonus : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
 	ABonus();
 	UPROPERTY(EditAnyWhere)
 	UBoxComponent* Root;
@@ -24,14 +23,13 @@ public:
 	UStaticMeshComponent* MeshComponent;
 
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
 	virtual void Tick(float DeltaTime) override;
-	void changeColor(int Type);
+	void ChangeColor(int Type);
 
+	UPROPERTY()
 	UMaterialInstanceDynamic* Material;
 
 	UFUNCTION()

@@ -6527,3 +6527,430 @@ Script Stack (0 frames):
 [2022.04.28-18.48.37:899][748]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
 [2022.04.28-18.48.37:908][748]LogUObjectHash: Compacting FUObjectHashTables data took   2.27ms
 [2022.04.28-18.48.37:924][749]LogPlayLevel: Display: Destroying online subsystem :Context_83
+[2022.04.29-02.46.30:796][292]LogAudioMixer: Warning: Audio device removed, falling back to other windows default device.
+[2022.04.29-02.46.30:796][292]LogAudioMixer: Resetting audio stream to device id 
+[2022.04.29-02.46.30:800][292]LogAudioMixer: Display: 0: FrontLeft
+[2022.04.29-02.46.30:800][292]LogAudioMixer: Display: 1: FrontRight
+[2022.04.29-02.46.48:315][344]LogAudioMixer: Warning: Audio device removed, falling back to other windows default device.
+[2022.04.29-02.46.48:315][344]LogAudioMixer: Resetting audio stream to device id 
+[2022.04.29-02.46.48:316][344]LogAudioMixer: Display: StartRunningNullDevice() called
+[2022.04.29-07.12.44:581][808]LogAudioMixer: Warning: Changing default audio render device to new device: {3.0.0.00000001}.{6C26BA7D-F0B2-4225-B422-8168C5261E45}.
+[2022.04.29-07.12.44:581][808]LogAudioMixer: Resetting audio stream to device id 
+[2022.04.29-07.12.44:581][808]LogAudioMixer: Display: StopRunningNullDevice() called
+[2022.04.29-07.12.44:585][808]LogAudioMixer: Display: 0: FrontLeft
+[2022.04.29-07.12.44:585][808]LogAudioMixer: Display: 1: FrontRight
+[2022.04.29-07.12.57:365][846]LogAudioMixer: Warning: Audio device removed, falling back to other windows default device.
+[2022.04.29-07.12.57:365][846]LogAudioMixer: Resetting audio stream to device id 
+[2022.04.29-07.12.57:366][846]LogAudioMixer: Display: StartRunningNullDevice() called
+[2022.04.29-10.24.29:331][ 29]LogAudioMixer: Warning: Changing default audio render device to new device: {0.0.0.00000000}.{fc04dfcb-c145-41ec-8f3a-d1e67a4c97f0}.
+[2022.04.29-10.24.29:331][ 29]LogAudioMixer: Resetting audio stream to device id 
+[2022.04.29-10.24.29:331][ 29]LogAudioMixer: Display: StopRunningNullDevice() called
+[2022.04.29-10.24.29:343][ 29]LogAudioMixer: Display: 0: FrontLeft
+[2022.04.29-10.24.29:343][ 29]LogAudioMixer: Display: 1: FrontRight
+[2022.04.29-10.24.39:795][ 61]LogWindowsTextInputMethodSystem: Display: IME system deactivated.
+[2022.04.29-10.24.39:795][ 61]LogWindowsTextInputMethodSystem: Display: IME system deactivated.
+[2022.04.29-10.30.10:262][ 92]LogHotReload: New module detected: UE4Editor-arka-0036.dll
+[2022.04.29-10.30.10:949][ 95]LogHotReload: Starting Hot-Reload from IDE
+[2022.04.29-10.30.10:981][ 95]LogClass: Could not find existing class arkaGameModeBase in package /Script/arka for HotReload, assuming new class
+[2022.04.29-10.30.10:984][ 95]LogClass: Could not find existing class Bonus in package /Script/arka for HotReload, assuming new class
+[2022.04.29-10.30.10:984][ 95]LogClass: Function OnBoxBeginOverlap is new.
+[2022.04.29-10.30.10:986][ 95]LogClass: Could not find existing class Enemy in package /Script/arka for HotReload, assuming new class
+[2022.04.29-10.30.10:986][ 95]LogClass: Function NotifyHit is new.
+[2022.04.29-10.30.10:986][ 95]LogClass: Function OnBoxBeginOverlap is new.
+[2022.04.29-10.30.10:986][ 95]LogClass: Function OnOverlapEnd is new.
+[2022.04.29-10.30.10:989][ 95]LogClass: E_Status HotReload.
+[2022.04.29-10.30.10:989][ 95]LogClass: E_BonusType HotReload.
+[2022.04.29-10.30.10:995][ 95]LogHotReload: Re-instancing arkaGameModeBase after hot-reload.
+[2022.04.29-10.30.11:009][ 95]LogHotReload: Re-instancing Block after hot-reload.
+[2022.04.29-10.30.11:023][ 95]LogHotReload: Re-instancing Bonus after hot-reload.
+[2022.04.29-10.30.11:041][ 95]LogHotReload: Re-instancing Enemy after hot-reload.
+[2022.04.29-10.30.11:056][ 95]LogNativeClassHierarchy: Verbose: Native class hierarchy updated for 'arka' in 0.0003 seconds. Added 8 classes and 2 folders.
+[2022.04.29-10.30.11:061][ 95]Display: HotReload successful (1 functions remapped  0 scriptstructs remapped)
+[2022.04.29-10.30.11:127][ 95]LogNativeClassHierarchy: Verbose: Native class hierarchy populated in 0.0100 seconds. Added 3830 classes and 930 folders.
+[2022.04.29-10.30.11:135][ 95]Display: HotReload took  0.2s.
+[2022.04.29-10.30.13:659][103]LogWindowsTextInputMethodSystem: Display: IME system deactivated.
+[2022.04.29-10.30.13:659][103]LogWindowsTextInputMethodSystem: Display: IME system deactivated.
+[2022.04.29-10.30.15:041][267]LogTemp: Repeating last play command: Selected Viewport
+[2022.04.29-10.30.15:046][267]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2022.04.29-10.30.15:046][267]PIE: New page: PIE session: L_mainGame (29 апр. 2022 г., 16:30:15)
+[2022.04.29-10.30.15:071][267]LogPlayLevel: Creating play world package: /Game/UEDPIE_0_L_mainGame
+[2022.04.29-10.30.15:072][267]LogPlayLevel: PIE: StaticDuplicateObject took: (0.001364s)
+[2022.04.29-10.30.15:073][267]LogAIModule: Creating AISystem for world L_MainGame
+[2022.04.29-10.30.15:073][267]LogPlayLevel: PIE: World Init took: (0.001014s)
+[2022.04.29-10.30.15:073][267]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/L_mainGame.L_MainGame to /Game/UEDPIE_0_L_mainGame.L_MainGame (0.002497s)
+[2022.04.29-10.30.15:135][267]LogUObjectHash: Compacting FUObjectHashTables data took   3.18ms
+[2022.04.29-10.30.15:138][267]LogAudio: Display: Creating Audio Device:                 Id: 52, Scope: Unique, Realtime: True
+[2022.04.29-10.30.15:138][267]LogAudioMixer: Display: Audio Mixer Platform Settings:
+[2022.04.29-10.30.15:138][267]LogAudioMixer: Display: 	Sample Rate:						  48000
+[2022.04.29-10.30.15:138][267]LogAudioMixer: Display: 	Callback Buffer Frame Size Requested: 1024
+[2022.04.29-10.30.15:138][267]LogAudioMixer: Display: 	Callback Buffer Frame Size To Use:	  1024
+[2022.04.29-10.30.15:138][267]LogAudioMixer: Display: 	Number of buffers to queue:			  2
+[2022.04.29-10.30.15:138][267]LogAudioMixer: Display: 	Max Channels (voices):				  32
+[2022.04.29-10.30.15:138][267]LogAudioMixer: Display: 	Number of Async Source Workers:		  0
+[2022.04.29-10.30.15:138][267]LogAudio: Display: AudioDevice MaxSources: 32
+[2022.04.29-10.30.15:138][267]LogAudio: Display: Audio Spatialization Plugin: None (built-in).
+[2022.04.29-10.30.15:138][267]LogAudio: Display: Audio Reverb Plugin: None (built-in).
+[2022.04.29-10.30.15:138][267]LogAudio: Display: Audio Occlusion Plugin: None (built-in).
+[2022.04.29-10.30.15:138][267]LogAudioMixer: Display: Initializing audio mixer.
+[2022.04.29-10.30.15:143][267]LogAudioMixer: Display: 0: FrontLeft
+[2022.04.29-10.30.15:143][267]LogAudioMixer: Display: 1: FrontRight
+[2022.04.29-10.30.15:154][267]LogAudioMixer: Display: Using Audio Device Динамики (4- Устройство с поддержкой High Definition Audio)
+[2022.04.29-10.30.15:154][267]LogAudioMixer: Display: Initializing Sound Submixes...
+[2022.04.29-10.30.15:154][267]LogAudioMixer: Display: Creating Master Submix 'MasterSubmixDefault'
+[2022.04.29-10.30.15:154][267]LogAudioMixer: Display: Creating Master Submix 'MasterReverbSubmixDefault'
+[2022.04.29-10.30.15:155][267]LogAudioMixer: Display: Creating Master Submix 'MasterEQSubmixDefault'
+[2022.04.29-10.30.15:155][267]LogAudioMixer: FMixerPlatformXAudio2::StartAudioStream() called
+[2022.04.29-10.30.15:155][267]LogAudioMixer: Display: Output buffers initialized: Frames=1024, Channels=2, Samples=2048
+[2022.04.29-10.30.15:156][267]LogAudioMixer: Display: Starting AudioMixerPlatformInterface::RunInternal()
+[2022.04.29-10.30.15:156][267]LogAudioMixer: Display: FMixerPlatformXAudio2::SubmitBuffer() called for the first time
+[2022.04.29-10.30.15:156][267]LogInit: FAudioDevice initialized.
+[2022.04.29-10.30.15:156][267]LogAudio: Display: Audio Device (ID: 52) registered with world 'L_MainGame'.
+[2022.04.29-10.30.15:166][267]LogLoad: Game class is 'arkaGameModeBase'
+[2022.04.29-10.30.15:167][267]LogWorld: Bringing World /Game/UEDPIE_0_L_mainGame.L_MainGame up for play (max tick rate 0) at 2022.04.29-13.30.15
+[2022.04.29-10.30.15:167][267]LogWorld: Bringing up level for play took: 0.000437
+[2022.04.29-10.30.15:167][267]LogOnline: OSS: Creating online subsystem instance for: :Context_84
+[2022.04.29-10.30.15:181][267]PIE: Server logged in
+[2022.04.29-10.30.15:182][267]PIE: Play in editor total start time 0,136 seconds.
+[2022.04.29-10.30.16:487][423]LogTemp: Warning: SpaceClick 
+[2022.04.29-10.30.16:904][473]LogTemp: Warning: AddScore
+[2022.04.29-10.30.16:904][473]LogTemp: Warning: AddScore
+[2022.04.29-10.30.17:903][593]LogTemp: Warning: AddScore
+[2022.04.29-10.30.17:904][593]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.17:904][593]LogTemp: Warning: AddScore
+[2022.04.29-10.30.17:904][593]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.17:904][593]LogTemp: Warning: AddScore
+[2022.04.29-10.30.17:904][593]LogTemp: Warning: AddScore
+[2022.04.29-10.30.17:904][593]LogTemp: Warning: AddScore
+[2022.04.29-10.30.17:904][593]LogTemp: Warning: AddScore
+[2022.04.29-10.30.18:904][713]LogTemp: Warning: AddScore
+[2022.04.29-10.30.18:904][713]LogTemp: Warning: AddScore
+[2022.04.29-10.30.18:904][713]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.19:870][829]LogTemp: Warning: AddScore
+[2022.04.29-10.30.19:870][829]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.19:870][829]LogTemp: Warning: AddScore
+[2022.04.29-10.30.19:870][829]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.19:870][829]LogTemp: Warning: AddScore
+[2022.04.29-10.30.19:870][829]LogTemp: Warning: AddScore
+[2022.04.29-10.30.19:871][829]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.19:871][829]LogTemp: Warning: AddScore
+[2022.04.29-10.30.19:871][829]LogTemp: Warning: AddScore
+[2022.04.29-10.30.19:871][829]LogTemp: Warning: AddScore
+[2022.04.29-10.30.19:871][829]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.19:871][829]LogTemp: Warning: AddScore
+[2022.04.29-10.30.20:803][941]LogTemp: Warning: AddScore
+[2022.04.29-10.30.20:804][941]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.20:804][941]LogTemp: Warning: AddScore
+[2022.04.29-10.30.20:804][941]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.20:804][941]LogTemp: Warning: AddScore
+[2022.04.29-10.30.20:804][941]LogTemp: Warning: AddScore
+[2022.04.29-10.30.20:804][941]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.20:804][941]LogTemp: Warning: AddScore
+[2022.04.29-10.30.20:878][950]LogTemp: Warning: AddScore
+[2022.04.29-10.30.20:879][950]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.20:879][950]LogTemp: Warning: AddScore
+[2022.04.29-10.30.20:879][950]LogTemp: Warning: AddScore
+[2022.04.29-10.30.20:879][950]LogTemp: Warning: AddScore
+[2022.04.29-10.30.20:922][955]LogTemp: Warning: AddScore
+[2022.04.29-10.30.20:923][955]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.20:923][955]LogTemp: Warning: AddScore
+[2022.04.29-10.30.20:923][955]LogTemp: Warning: AddScore
+[2022.04.29-10.30.20:923][955]LogTemp: Warning: AddScore
+[2022.04.29-10.30.20:923][955]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.20:923][955]LogTemp: Warning: AddScore
+[2022.04.29-10.30.20:923][955]LogTemp: Warning: AddScore
+[2022.04.29-10.30.20:923][955]LogTemp: Warning: AddScore
+[2022.04.29-10.30.20:923][955]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:039][969]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:039][969]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:039][969]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:081][974]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:081][974]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.21:081][974]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:081][974]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:081][974]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.21:081][974]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:081][974]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:081][974]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:271][997]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:271][997]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:271][997]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:354][  7]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:354][  7]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:354][  7]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:554][ 31]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:554][ 31]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.21:554][ 31]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:554][ 31]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:554][ 31]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:755][ 55]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:755][ 55]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.21:755][ 55]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:755][ 55]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.21:756][ 55]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:756][ 55]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:963][ 80]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:963][ 80]LogTemp: Warning: AddScore
+[2022.04.29-10.30.21:963][ 80]LogTemp: Warning: AddScore
+[2022.04.29-10.30.22:162][104]LogTemp: Warning: AddScore
+[2022.04.29-10.30.22:162][104]LogTemp: Warning: AddScore
+[2022.04.29-10.30.22:162][104]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.22:162][104]LogTemp: Warning: AddScore
+[2022.04.29-10.30.22:362][128]LogTemp: Warning: AddScore
+[2022.04.29-10.30.22:362][128]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.22:362][128]LogTemp: Warning: AddScore
+[2022.04.29-10.30.22:362][128]LogTemp: Warning: AddScore
+[2022.04.29-10.30.22:362][128]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.22:362][128]LogTemp: Warning: AddScore
+[2022.04.29-10.30.22:363][128]LogTemp: Warning: AddScore
+[2022.04.29-10.30.24:961][434]LogTemp: Warning: activeBonus width disable!
+[2022.04.29-10.30.25:823][538]LogTemp: Warning: AddScore
+[2022.04.29-10.30.25:824][538]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.25:824][538]LogTemp: Warning: AddScore
+[2022.04.29-10.30.25:824][538]LogTemp: Warning: AddScore
+[2022.04.29-10.30.25:865][543]LogTemp: Warning: AddScore
+[2022.04.29-10.30.25:865][543]LogTemp: Warning: AddScore
+[2022.04.29-10.30.25:865][543]LogTemp: Warning: AddScore
+[2022.04.29-10.30.25:865][543]LogTemp: Warning: AddScore
+[2022.04.29-10.30.25:865][543]LogTemp: Warning: AddScore
+[2022.04.29-10.30.25:865][543]LogTemp: Warning: AddScore
+[2022.04.29-10.30.25:949][553]LogTemp: Warning: AddScore
+[2022.04.29-10.30.25:949][553]LogTemp: Warning: AddScore
+[2022.04.29-10.30.25:949][553]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:124][574]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:124][574]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.26:124][574]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:124][574]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:140][576]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:140][576]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:141][576]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.26:141][576]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:141][576]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:141][576]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.26:141][576]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:141][576]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:141][576]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.26:141][576]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:141][576]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.26:141][576]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:141][576]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:142][576]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.26:142][576]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:142][576]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:142][576]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.26:142][576]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:142][576]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:142][576]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.26:142][576]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:142][576]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:142][576]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:142][576]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:142][576]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.26:142][576]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:143][576]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:424][610]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:424][610]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:424][610]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:507][620]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:507][620]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:508][620]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.26:508][620]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:508][620]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:508][620]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.26:508][620]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:508][620]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:708][644]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:708][644]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:708][644]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.26:708][644]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:708][644]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:708][644]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:708][644]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:791][654]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:791][654]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.26:791][654]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:791][654]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:791][654]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:791][654]LogTemp: Warning: AddScore
+[2022.04.29-10.30.26:881][665]LogTemp: Warning: activeBonus destroy disable!
+[2022.04.29-10.30.27:023][682]LogTemp: Warning: AddScore
+[2022.04.29-10.30.27:024][682]LogTemp: Warning: AddScore
+[2022.04.29-10.30.27:024][682]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.27:024][682]LogTemp: Warning: AddScore
+[2022.04.29-10.30.27:024][682]LogTemp: Warning: AddScore
+[2022.04.29-10.30.27:024][682]LogTemp: Warning: AddScore
+[2022.04.29-10.30.27:024][682]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.27:024][682]LogTemp: Warning: AddScore
+[2022.04.29-10.30.27:024][682]LogTemp: Warning: AddScore
+[2022.04.29-10.30.27:024][682]LogTemp: Warning: AddScore
+[2022.04.29-10.30.27:024][682]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.27:024][682]LogTemp: Warning: AddScore
+[2022.04.29-10.30.27:024][682]LogTemp: Warning: AddScore
+[2022.04.29-10.30.27:025][682]LogTemp: Warning: AddScore
+[2022.04.29-10.30.27:025][682]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.27:025][682]LogTemp: Warning: AddScore
+[2022.04.29-10.30.27:025][682]LogTemp: Warning: AddScore
+[2022.04.29-10.30.27:025][682]LogTemp: Warning: AddScore
+[2022.04.29-10.30.27:815][777]LogTemp: Warning: AddScore
+[2022.04.29-10.30.27:816][777]LogTemp: Warning: AddScore
+[2022.04.29-10.30.27:816][777]LogTemp: Warning: AddScore
+[2022.04.29-10.30.28:107][812]LogTemp: Warning: AddScore
+[2022.04.29-10.30.28:108][812]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.28:108][812]LogTemp: Warning: AddScore
+[2022.04.29-10.30.28:108][812]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.28:108][812]LogTemp: Warning: AddScore
+[2022.04.29-10.30.28:108][812]LogTemp: Warning: AddScore
+[2022.04.29-10.30.28:108][812]LogTemp: Warning: AddScore
+[2022.04.29-10.30.28:108][812]LogTemp: Warning: AddScore
+[2022.04.29-10.30.28:399][847]LogTemp: Warning: AddScore
+[2022.04.29-10.30.28:399][847]LogTemp: Warning: AddScore
+[2022.04.29-10.30.28:399][847]LogTemp: Warning: AddScore
+[2022.04.29-10.30.28:399][847]LogTemp: Warning: AddScore
+[2022.04.29-10.30.28:400][847]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.28:400][847]LogTemp: Warning: AddScore
+[2022.04.29-10.30.28:400][847]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.28:400][847]LogTemp: Warning: AddScore
+[2022.04.29-10.30.28:716][885]LogTemp: Warning: AddScore
+[2022.04.29-10.30.28:716][885]LogTemp: Warning: AddScore
+[2022.04.29-10.30.28:716][885]LogTemp: Warning: AddScore
+[2022.04.29-10.30.32:316][317]LogTemp: Warning: AddScore
+[2022.04.29-10.30.32:316][317]LogTemp: Warning: AddScore
+[2022.04.29-10.30.32:316][317]LogTemp: Warning: AddScore
+[2022.04.29-10.30.33:149][417]LogTemp: Warning: activeBonus width disable!
+[2022.04.29-10.30.34:032][523]LogTemp: Warning: activeBonus destroy disable!
+[2022.04.29-10.30.37:074][888]LogTemp: Warning: AddScore
+[2022.04.29-10.30.37:074][888]LogTemp: Warning: AddScore
+[2022.04.29-10.30.38:149][ 17]LogTemp: Warning: AddScore
+[2022.04.29-10.30.38:149][ 17]LogTemp: Warning: AddScore
+[2022.04.29-10.30.39:407][168]LogTemp: Warning: AddScore
+[2022.04.29-10.30.39:407][168]LogTemp: Warning: AddScore
+[2022.04.29-10.30.39:408][168]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.39:408][168]LogTemp: Warning: AddScore
+[2022.04.29-10.30.39:408][168]LogTemp: Warning: AddScore
+[2022.04.29-10.30.39:408][168]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.39:408][168]LogTemp: Warning: AddScore
+[2022.04.29-10.30.39:566][187]LogTemp: Warning: AddScore
+[2022.04.29-10.30.39:566][187]LogTemp: Warning: AddScore
+[2022.04.29-10.30.39:566][187]LogTemp: Warning: AddScore
+[2022.04.29-10.30.41:341][400]LogTemp: Warning: AddScore
+[2022.04.29-10.30.41:341][400]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.41:341][400]LogTemp: Warning: AddScore
+[2022.04.29-10.30.41:341][400]LogTemp: Warning: AddScore
+[2022.04.29-10.30.41:341][400]LogTemp: Warning: AddScore
+[2022.04.29-10.30.41:341][400]LogTemp: Warning: AddScore
+[2022.04.29-10.30.46:416][  9]LogTemp: Warning: activeBonus destroy disable!
+[2022.04.29-10.30.46:824][ 58]LogTemp: Warning: AddScore
+[2022.04.29-10.30.46:824][ 58]LogTemp: Warning: AddScore
+[2022.04.29-10.30.47:966][195]LogTemp: Warning: AddScore
+[2022.04.29-10.30.47:967][195]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.47:967][195]LogTemp: Warning: AddScore
+[2022.04.29-10.30.47:967][195]LogTemp: Warning: AddScore
+[2022.04.29-10.30.47:967][195]LogTemp: Warning: AddScore
+[2022.04.29-10.30.47:967][195]LogTemp: Warning: AddScore
+[2022.04.29-10.30.47:967][195]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.49:050][325]LogTemp: Warning: AddScore
+[2022.04.29-10.30.49:050][325]LogTemp: Warning: AddScore
+[2022.04.29-10.30.50:241][468]LogTemp: Warning: AddScore
+[2022.04.29-10.30.50:242][468]LogTemp: Warning: AddScore
+[2022.04.29-10.30.50:242][468]LogTemp: Warning: AddScore
+[2022.04.29-10.30.50:242][468]LogTemp: Warning: AddScore
+[2022.04.29-10.30.51:558][626]LogTemp: Warning: AddScore
+[2022.04.29-10.30.51:558][626]LogTemp: Warning: AddScore
+[2022.04.29-10.30.51:558][626]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.51:558][626]LogTemp: Warning: AddScore
+[2022.04.29-10.30.51:558][626]LogTemp: Warning: AddScore
+[2022.04.29-10.30.52:966][795]LogTemp: Warning: AddScore
+[2022.04.29-10.30.52:966][795]LogTemp: Warning: AddScore
+[2022.04.29-10.30.52:966][795]LogTemp: Warning: AddScore
+[2022.04.29-10.30.52:966][795]LogTemp: Warning: AddScore
+[2022.04.29-10.30.54:450][973]LogTemp: Warning: AddScore
+[2022.04.29-10.30.54:450][973]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.54:450][973]LogTemp: Warning: AddScore
+[2022.04.29-10.30.54:450][973]LogTemp: Warning: AddScore
+[2022.04.29-10.30.54:450][973]LogTemp: Warning: AddScore
+[2022.04.29-10.30.54:450][973]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.54:450][973]LogTemp: Warning: AddScore
+[2022.04.29-10.30.54:451][973]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.54:451][973]LogTemp: Warning: AddScore
+[2022.04.29-10.30.54:451][973]LogTemp: Warning: AddScore
+[2022.04.29-10.30.54:451][973]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.54:451][973]LogTemp: Warning: AddScore
+[2022.04.29-10.30.54:451][973]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.54:451][973]LogTemp: Warning: AddScore
+[2022.04.29-10.30.54:451][973]LogTemp: Warning: AddScore
+[2022.04.29-10.30.54:975][ 36]LogTemp: Warning: activeBonus width disable!
+[2022.04.29-10.30.55:050][ 45]LogTemp: Warning: SetAllPhysicsLinearVelocity 
+[2022.04.29-10.30.59:116][533]LogTemp: Warning: AddScore
+[2022.04.29-10.30.59:117][533]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.59:117][533]LogTemp: Warning: AddScore
+[2022.04.29-10.30.59:117][533]LogTemp: Warning: AddScore
+[2022.04.29-10.30.59:117][533]LogTemp: Warning: AddScore
+[2022.04.29-10.30.59:150][537]LogTemp: Warning: AddScore
+[2022.04.29-10.30.59:150][537]LogTemp: Warning: AddScore
+[2022.04.29-10.30.59:150][537]LogTemp: Warning: AddScore
+[2022.04.29-10.30.59:150][537]LogTemp: Warning: AddScore
+[2022.04.29-10.30.59:150][537]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.59:150][537]LogTemp: Warning: AddScore
+[2022.04.29-10.30.59:150][537]LogTemp: Warning: AddScore
+[2022.04.29-10.30.59:150][537]LogTemp: Warning: AddScore
+[2022.04.29-10.30.59:150][537]LogTemp: Warning: AddScore
+[2022.04.29-10.30.59:258][550]LogTemp: Warning: AddScore
+[2022.04.29-10.30.59:258][550]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.59:258][550]LogTemp: Warning: AddScore
+[2022.04.29-10.30.59:258][550]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.59:258][550]LogTemp: Warning: AddScore
+[2022.04.29-10.30.59:258][550]LogTemp: Warning: AddScore
+[2022.04.29-10.30.59:259][550]LogTemp: Warning: Bonus use!
+[2022.04.29-10.30.59:259][550]LogTemp: Warning: AddScore
+[2022.04.29-10.30.59:259][550]LogTemp: Warning: AddScore
+[2022.04.29-10.30.59:259][550]LogTemp: Warning: AddScore
+[2022.04.29-10.30.59:259][550]LogTemp: Warning: AddScore
+[2022.04.29-10.31.00:633][715]LogTemp: Warning: AddScore
+[2022.04.29-10.31.00:633][715]LogTemp: Warning: AddScore
+[2022.04.29-10.31.00:634][715]LogTemp: Warning: AddScore
+[2022.04.29-10.31.00:675][720]LogTemp: Warning: AddScore
+[2022.04.29-10.31.00:675][720]LogTemp: Warning: AddScore
+[2022.04.29-10.31.00:675][720]LogTemp: Warning: AddScore
+[2022.04.29-10.31.00:717][725]LogTemp: Warning: AddScore
+[2022.04.29-10.31.00:717][725]LogTemp: Warning: AddScore
+[2022.04.29-10.31.00:717][725]LogTemp: Warning: AddScore
+[2022.04.29-10.31.00:758][730]LogTemp: Warning: AddScore
+[2022.04.29-10.31.00:759][730]LogTemp: Warning: Bonus use!
+[2022.04.29-10.31.00:759][730]LogTemp: Warning: AddScore
+[2022.04.29-10.31.00:759][730]LogTemp: Warning: AddScore
+[2022.04.29-10.31.00:759][730]LogTemp: Warning: Bonus use!
+[2022.04.29-10.31.00:759][730]LogTemp: Warning: AddScore
+[2022.04.29-10.31.01:458][814]LogTemp: Warning: activeBonus destroy disable!
+[2022.04.29-10.31.02:258][910]LogTemp: Warning: AddScore
+[2022.04.29-10.31.02:258][910]LogTemp: Warning: AddScore
+[2022.04.29-10.31.03:558][ 66]LogTemp: Warning: AddScore
+[2022.04.29-10.31.03:558][ 66]LogTemp: Warning: AddScore
+[2022.04.29-10.31.03:559][ 66]LogTemp: Warning: Bonus use!
+[2022.04.29-10.31.03:559][ 66]LogTemp: Warning: AddScore
+[2022.04.29-10.31.07:767][571]LogTemp: Warning: activeBonus width disable!
+[2022.04.29-10.31.08:092][610]LogTemp: Warning: SetAllPhysicsLinearVelocity 
+[2022.04.29-10.31.11:425][ 10]LogTemp: Warning: SetAllPhysicsLinearVelocity 
+[2022.04.29-10.31.13:209][224]LogTemp: Warning: SetAllPhysicsLinearVelocity 
+[2022.04.29-10.31.13:975][316]LogTemp: Warning: AddScore
+[2022.04.29-10.31.13:975][316]LogTemp: Warning: AddScore
+[2022.04.29-10.31.14:375][364]LogTemp: Warning: AddScore
+[2022.04.29-10.31.14:375][364]LogTemp: Warning: AddScore
+[2022.04.29-10.31.24:017][521]LogTemp: Warning: AddScore
+[2022.04.29-10.31.24:018][521]LogTemp: Warning: Bonus use!
+[2022.04.29-10.31.24:018][521]LogTemp: Warning: AddScore
+[2022.04.29-10.31.24:018][521]LogTemp: Warning: AddScore
+[2022.04.29-10.31.24:018][521]LogTemp: Warning: Bonus use!
+[2022.04.29-10.31.24:018][521]LogTemp: Warning: AddScore
+[2022.04.29-10.31.25:759][730]LogTemp: Warning: AddScore
+[2022.04.29-10.31.25:759][730]LogTemp: Warning: AddScore
+[2022.04.29-10.31.36:292][555]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2022.04.29-10.31.36:292][555]LogWorld: BeginTearingDown for /Game/UEDPIE_0_L_mainGame
+[2022.04.29-10.31.36:293][555]LogWorld: UWorld::CleanupWorld for L_MainGame, bSessionEnded=true, bCleanupResources=true
+[2022.04.29-10.31.36:293][555]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.04.29-10.31.36:300][555]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2022.04.29-10.31.36:304][555]LogSlate: InvalidateAllWidgets triggered.  All widgets were invalidated
+[2022.04.29-10.31.36:316][555]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2022.04.29-10.31.36:317][555]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2022.04.29-10.31.36:318][555]LogAudioMixer: FMixerPlatformXAudio2::StopAudioStream() called
+[2022.04.29-10.31.36:323][555]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2022.04.29-10.31.36:329][555]LogUObjectHash: Compacting FUObjectHashTables data took   2.64ms
+[2022.04.29-10.31.36:353][557]LogPlayLevel: Display: Destroying online subsystem :Context_84

@@ -61,7 +61,7 @@ void ABonus::BeginPlay()
 	if (rnd == 1) Type = E_BonusType::AddPoint;
 	if (rnd == 2) Type = E_BonusType::AddWidth;
 
-	changeColor(rnd);
+	ChangeColor(rnd);
 
 	Root->OnComponentBeginOverlap.AddDynamic(this, &ABonus::OnBoxBeginOverlap);
 	Super::BeginPlay();
@@ -80,7 +80,7 @@ void ABonus::Tick(float DeltaTime)
 	Root->AddLocalOffset(FVector(0, 0, -2));
 }
 
-void ABonus::changeColor(int type2)
+void ABonus::ChangeColor(int type2)
 {
 	switch (type2)
 	{
@@ -105,17 +105,14 @@ void ABonus::changeColor(int type2)
 void ABonus::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp,
                                int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	if (Other && Other->GetClass() == ACarriage::StaticClass())
+	UE_LOG(LogTemp, Warning, TEXT("Bonus use!"));
+
+	TArray<AActor*> FoundActors;
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ABall::StaticClass(), FoundActors);
+	if (FoundActors.Num() != 0)
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Bonus use!"));
-
-		TArray<AActor*> FoundActors;
-		UGameplayStatics::GetAllActorsOfClass(GetWorld(), ABall::StaticClass(), FoundActors);
-		if (FoundActors.Num() != 0)
-		{
-			((ACarriage*)UGameplayStatics::GetPlayerPawn(GetWorld(), 0))->ActiveBonus(Type);
-		}
-
-		GetWorld()->DestroyActor(this);
+		((ACarriage*)UGameplayStatics::GetPlayerPawn(GetWorld(), 0))->ActiveBonus(Type);
 	}
+
+	GetWorld()->DestroyActor(this);
 }

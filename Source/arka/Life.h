@@ -13,16 +13,13 @@ class ARKA_API ALife : public AActor
 	GENERATED_BODY()
 	
 public:	
-	// Sets default values for this actor's properties
 	ALife();
 
 protected:
-	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 	void ReloadLife();
 
 public:	
-	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
 	UPROPERTY(EditAnyWhere)

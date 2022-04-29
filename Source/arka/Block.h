@@ -19,6 +19,7 @@ protected:
 
 public:	
 	virtual void Tick(float DeltaTime) override;
+	
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="component")
 	UStaticMeshComponent* MeshComponent;
 
