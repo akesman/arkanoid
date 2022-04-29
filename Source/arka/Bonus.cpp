@@ -105,14 +105,17 @@ void ABonus::ChangeColor(int type2)
 void ABonus::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp,
                                int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Bonus use!"));
-
-	TArray<AActor*> FoundActors;
-	UGameplayStatics::GetAllActorsOfClass(GetWorld(), ABall::StaticClass(), FoundActors);
-	if (FoundActors.Num() != 0)
+	if (Other && Other->GetClass() == ACarriage::StaticClass())
 	{
-		((ACarriage*)UGameplayStatics::GetPlayerPawn(GetWorld(), 0))->ActiveBonus(Type);
-	}
+		UE_LOG(LogTemp, Warning, TEXT("Bonus use!"));
 
-	GetWorld()->DestroyActor(this);
+		TArray<AActor*> FoundActors;
+		UGameplayStatics::GetAllActorsOfClass(GetWorld(), ABall::StaticClass(), FoundActors);
+		if (FoundActors.Num() != 0)
+		{
+			((ACarriage*)UGameplayStatics::GetPlayerPawn(GetWorld(), 0))->ActiveBonus(Type);
+		}
+
+		GetWorld()->DestroyActor(this);
+	}
 }

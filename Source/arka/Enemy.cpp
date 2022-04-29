@@ -69,15 +69,12 @@ void AEnemy::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveCom
 void AEnemy::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp,
                                int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	if ((Other != NULL) && (Other != this) && (OtherComp != NULL))
+	if (Other && Other->GetClass() == ABall::StaticClass())
 	{
-		if (Other && (Other != this) && OtherComp && Other->GetClass() == ABall::StaticClass())
+		if (((ACarriage*)UGameplayStatics::GetPlayerPawn(GetWorld(), 0))->bActiveBonusDestroy)
 		{
-			if (((ACarriage*)UGameplayStatics::GetPlayerPawn(GetWorld(), 0))->bActiveBonusDestroy)
-			{
-				DestroyItem();
-				AddScore(PointsByLvl * LvlEnemy);
-			}
+			DestroyItem();
+			AddScore(PointsByLvl * LvlEnemy);
 		}
 	}
 }
@@ -86,17 +83,20 @@ void AEnemy::OnBoxBeginOverlap(UPrimitiveComponent* OverlappedComp, AActor* Othe
 void AEnemy::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp,
                           int32 OtherBodyIndex)
 {
-	LvlEnemy --;
-	ChangeColor();
-	AddScore(1);
-	if (LvlEnemy <= 0)
+	if (Other && Other->GetClass() == ABall::StaticClass())
 	{
-		if (FMath::RandRange(0, 100) > 70)
+		LvlEnemy --;
+		ChangeColor();
+		AddScore(1);
+		if (LvlEnemy <= 0)
 		{
-			SpawnBonus(FVector(GetActorLocation().X, GetActorLocation().Y, GetActorLocation().Z));
-		}
+			if (FMath::RandRange(0, 100) > 70)
+			{
+				SpawnBonus(FVector(GetActorLocation().X, GetActorLocation().Y, GetActorLocation().Z));
+			}
 
-		DestroyItem();
+			DestroyItem();
+		}
 	}
 }
 

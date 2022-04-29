@@ -140,13 +140,11 @@ void ACarriage::SpaceClick()
 void ACarriage::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitiveComponent* OtherComp, bool bSelfMoved,
                           FVector HitLocation, FVector HitNormal, FVector NormalImpulse, const FHitResult& Hit)
 {
-	if ((Other != NULL) && (Other != this) && (OtherComp != NULL))
+	if (Other && Other->GetClass() == ABall::StaticClass())
 	{
-		if (Other && (Other != this) && OtherComp && Other->GetClass() == ABall::StaticClass())
-		{
-			((ABall*)Other)->AddSpeed();
-		}
+		((ABall*)Other)->AddSpeed();
 	}
+
 	Super::NotifyHit(MyComp, Other, OtherComp, bSelfMoved, HitLocation, HitNormal, NormalImpulse, Hit);
 }
 
@@ -154,13 +152,10 @@ void ACarriage::NotifyHit(UPrimitiveComponent* MyComp, AActor* Other, UPrimitive
 void ACarriage::OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* Other, UPrimitiveComponent* OtherComp,
                              int32 OtherBodyIndex)
 {
-	if ((Other != NULL) && (Other != this) && (OtherComp != NULL))
+	if (Other && Other->GetClass() == ABall::StaticClass())
 	{
-		if (Other && (Other != this) && OtherComp && Other->GetClass() == ABall::StaticClass())
-		{
-			((ABall*)Other)->AddSpeed();
-			UE_LOG(LogTemp, Warning, TEXT("SetAllPhysicsLinearVelocity "));
-		}
+		((ABall*)Other)->AddSpeed();
+		UE_LOG(LogTemp, Warning, TEXT("SetAllPhysicsLinearVelocity "));
 	}
 }
 
